@@ -23,23 +23,25 @@ const MenuSection: FC = () => {
   return (
     <section className="w-full flex flex-col lg:flex-row h-full min-h-screen">
       <div
+        
         style={{
-          background: `url(${menuImg.src})`,
+          background: `url(/menu.jpeg)`,
           backgroundRepeat: "no-repeat",
           backgroundPosition: "center",
           backgroundSize: "cover",
+          
         }}
         className="w-full lg:w-[50%] p-12 flex flex-col justify-between items-center min-h-[80vh] md:min-h-screen h-full"
       >
         <Link href="/" className="font-semibold cursor-pointer">
-          Hukka Bukka
+            <img src="/logo sin fondo.PNG" alt="Descripción de la imagen" className="block m-[-160px] max-w-[400px] h-[auto] mt-[-55px]"></img>
         </Link>
         <div className="text-center">
           <h2 className="text-[#FACE8D] font-dancing text-[50px] md:text-[80px] leading-none">
-            Check Out
+            Te presentamos
           </h2>
           <h1 className="font-medium text-[50px] md:text-[80px] leading-none">
-            Our Menus
+            Nuestros productos
           </h1>
         </div>
 

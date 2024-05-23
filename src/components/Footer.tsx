@@ -6,18 +6,8 @@ const Footer = () => {
     <div className="w-full flex justify-between px-[10px] mt-[96px] mb-[80px]">
       <div className="w-full max-w-[162px]">
         <Link href="/" className="font-semibold cursor-pointer">
-          Hukka Bukka
+          Gourmet & Parrilla
         </Link>
-        <p className="mt-[32px] text-white text-opacity-50">
-          Created by Shariar Sheikh,{" "}
-          <Link
-            href="https://shariar.vercel.app/"
-            target="_blank"
-            className="text-blue-600 hover:underline"
-          >
-            Website
-          </Link>
-        </p>
       </div>
 
       <div className="w-full max-w-[162px]">

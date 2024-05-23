@@ -3,8 +3,8 @@ import "./globals.css";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Hukka Bukka",
-  description: "Hukka Bukka Restaurant",
+  title: "Gourmet & Parrilla",
+  description: "Empresa de alimentación corporativa Gourmet & Parrilla",
 };
 
 export default function RootLayout({

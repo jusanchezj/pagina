@@ -2,12 +2,17 @@
 
 import MenuSection from "@/sections/menu";
 import Head from "next/head";
+import Link from "next/link";
 
 export default function Menu() {
   return (
     <>
       <Head>
-        <title>Restaurant Hukka Bukka</title>
+        <title>
+          <Link href="/" className="font-semibold cursor-pointer">
+            <img src="/logo sin fondo.PNG" alt="Descripción de la imagen" className="block m-[-20px] max-w-[400px] h-[auto] mt-[-55px]"></img>
+          </Link>
+        </title>
       </Head>
 
       <main className="min-h-screen relative overflow-hidden">

@@ -1,4 +1,5 @@
 import React, { FC, MutableRefObject } from "react";
+import { useState } from "react";
 
 //-------------------------------------------------------
 interface IProps {
@@ -10,6 +11,8 @@ interface IProps {
 }
 //-------------------------------------------------------
 
+
+
 const Nav: FC<IProps> = ({
   navigationHandler,
   startersRef,
@@ -17,31 +20,54 @@ const Nav: FC<IProps> = ({
   dinnerRef,
   drinksRef,
 }) => {
+  // Estado para almacenar la referencia del último botón seleccionado
+  const [selectedRef, setSelectedRef] = useState<React.RefObject<HTMLDivElement> | null>(null);
+
   return (
     <div className="min-h-[74px] w-full flex justify-center items-center">
       <button
-        onClick={() => navigationHandler(startersRef)}
-        className="font-light text-[#FACE8D]"
+        onClick={() => {
+          navigationHandler(startersRef);
+          setSelectedRef(startersRef);
+        }}
+        className={`font-light ${
+          selectedRef === startersRef ? "text-[#FACE8D]" : "text-white"
+        }`}
       >
-        Starters
+        Desayunos
       </button>
       <button
-        onClick={() => navigationHandler(breakfastRef)}
-        className="font-light hover:text-[#FACE8D] text-white ml-[28px] md:ml-[48px]"
+        onClick={() => {
+          navigationHandler(breakfastRef);
+          setSelectedRef(breakfastRef);
+        }}
+        className={`font-light ${
+          selectedRef === breakfastRef ? "text-[#FACE8D]" : "text-white"
+        } ml-[28px] md:ml-[48px]`}
       >
-        Breakfast
+        Almuerzos
       </button>
       <button
-        onClick={() => navigationHandler(dinnerRef)}
-        className="font-light hover:text-[#FACE8D] text-white ml-[28px] md:ml-[48px]"
+        onClick={() => {
+          navigationHandler(dinnerRef);
+          setSelectedRef(dinnerRef);
+        }}
+        className={`font-light ${
+          selectedRef === dinnerRef ? "text-[#FACE8D]" : "text-white"
+        } ml-[28px] md:ml-[48px]`}
       >
-        Dinner
+        Comidas rápidas
       </button>
       <button
-        onClick={() => navigationHandler(drinksRef)}
-        className="font-light hover:text-[#FACE8D] text-white ml-[28px] md:ml-[48px]"
+        onClick={() => {
+          navigationHandler(drinksRef);
+          setSelectedRef(drinksRef);
+        }}
+        className={`font-light ${
+          selectedRef === drinksRef ? "text-[#FACE8D]" : "text-white"
+        } ml-[28px] md:ml-[48px]`}
       >
-        Drinks
+        Cafetería y tienda
       </button>
     </div>
   );
