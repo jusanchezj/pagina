@@ -53,18 +53,24 @@ export default function BookATable() {
             className="w-full lg:w-[50%] p-12 flex flex-col justify-between items-center min-h-screen h-full"
           >
             <Link href="/" className="font-semibold cursor-pointer">
-              <img src="/logo sin fondo.PNG" alt="Descripción de la imagen" className="block m-[-20px] max-w-[300px] h-[auto] mt-[-40px]"></img>
+            <img
+              src="/logo sin fondo.PNG"
+              alt="Descripción de la imagen"
+              className="block h-auto max-w-[340px] sm:max-w-[400px] mt-[-45px] ml-[3px]"
+            />
             </Link>
             <div className="text-center">
-              <h2 className="text-[#FACE8D] font-dancing text-[80px] leading-none">
+              <h2 className="text-[#FACE8D] font-dancing text-[46px] sm:text-[50px] md:text-[70px] leading-none">
                 Contactanos
               </h2>
-              <h1 className="font-medium text-[80px] leading-none">
+              <h1 className="font-medium text-5xl sm:text-6xl md:text-[50px] lg:text-[70px] leading-none">
                 Queremos escucharte
               </h1>
             </div>
 
+            <div className="w-full flex-col justify-center max-w-[650px] mb-[50px] sm:mb-[55px] md:mb-[50px] lg:mb-[10px]">
             <NavigationFooter />
+          </div>
           </div>
 
           <div className="w-full lg:w-[50%] flex flex-col justify-center h-auto px-4 pb-4 lg:px-0 lg:pb-0">
@@ -115,10 +121,10 @@ export default function BookATable() {
                 </button>
 
                 <div className="flex mt-4 gap-10 justify-center items-center space-x-4">
-                  <a href="https://wa.me/1234567890" target="_blank" rel="noopener noreferrer">
+                  <a href="https://wa.me/3106909696" target="_blank" rel="noopener noreferrer">
                     <img src="/LogoWpp.png" alt="WhatsApp" width={100}  />
                   </a>
-                  <a href="https://instagram.com/tuempresa" target="_blank" rel="noopener noreferrer">
+                  <a href="https://www.instagram.com/servigourmetparrilla/" target="_blank" rel="noopener noreferrer">
                     <img src="/LogoIg.png" alt="Instagram" width={100}/>
                   </a>
                 </div>
