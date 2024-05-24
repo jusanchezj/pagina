@@ -41,7 +41,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="w-full flex-col justify-center max-w-[650px] mb-[30px]"> {/* Ajuste para mover el botón hacia arriba */}
+          <div className="w-full flex-col justify-center max-w-[650px] mb-[50px] sm:mb-[50px] md:mb-[50px] lg:mb-[10px]">
             <NavigationFooter />
           </div>
         </section>
