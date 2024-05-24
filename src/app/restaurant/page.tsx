@@ -59,7 +59,7 @@ export default function Restaurant() {
               <img
                 src="/logos clientes.png"
                 alt="Descripción de la imagen"
-                className="flex mx-auto max-w-[600px] h-auto mt-10"
+                className="flex mx-auto max-w-[400px] md:max-w-[600px] h-auto mt-10"
               />
             </div>
           </div>
