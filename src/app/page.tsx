@@ -9,6 +9,7 @@ export default function Home() {
     <>
       <Head>
         <title>Restaurant Gourmet & Parrilla</title>
+        <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)" />
       </Head>
 
       <main className="min-h-screen relative overflow-hidden w-full bg-black">
@@ -41,7 +42,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="w-full flex-col justify-center max-w-[650px] mb-[55px] sm:mb-[50px] md:mb-[50px] lg:mb-[10px]">
+          <div className="w-full flex-col justify-center max-w-[650px] mb-[50px] sm:mb-[55px] md:mb-[50px] lg:mb-[10px]">
             <NavigationFooter />
           </div>
         </section>
