@@ -28,7 +28,7 @@ const NavigationFooter: React.FC = () => {
             absolute bottom-[70px] left-0 right-0 mx-auto w-full max-w-[450px] bg-white bg-opacity-70 text-black shadow-md rounded-[20px] overflow-hidden z-50
           `}
         >
-          <ul className="flex justify-between p-[10px] md:p-[16px] space-x-[5px] md:space-x-[12px] text-[14px] md:text-[16px]">
+          <ul className="flex justify-between p-[10px] ml-[-5px] md:p-[16px] space-x-[5px] md:space-x-[12px] text-[14px] md:text-[16px]">
             <li className="flex-1 text-center">
               <Link
                 href="classes"

@@ -10,7 +10,11 @@ export default function Menu() {
       <Head>
         <title>
           <Link href="/" className="font-semibold cursor-pointer">
-            <img src="/logo sin fondo.PNG" alt="Descripción de la imagen" className="block m-[-20px] max-w-[400px] h-[auto] mt-[-55px]"></img>
+          <img
+              src="/logo sin fondo.PNG"
+              alt="Descripción de la imagen"
+              className="block h-auto max-w-[340px] sm:max-w-[400px] mt-[-40px] ml-[3px]"
+            />
           </Link>
         </title>
       </Head>

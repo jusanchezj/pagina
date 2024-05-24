@@ -1,8 +1,7 @@
 import NavigationFooter from "@/components/NavigationFooter";
 import Link from "next/link";
-import { FC, MutableRefObject, useRef, useState } from "react";
+import { FC, MutableRefObject, useRef } from "react";
 import Nav from "./Nav";
-import menuImg from "../../assets/menupage.jpg";
 import Feed from "./Feed";
 
 const MenuSection: FC = () => {
@@ -22,30 +21,34 @@ const MenuSection: FC = () => {
 
   return (
     <section className="w-full flex flex-col lg:flex-row h-full min-h-screen">
-      <div
-        
-        style={{
-          background: `url(/menu.jpeg)`,
-          backgroundRepeat: "no-repeat",
-          backgroundPosition: "center",
-          backgroundSize: "cover",
-          
-        }}
-        className="w-full lg:w-[50%] p-12 flex flex-col justify-between items-center min-h-[80vh] md:min-h-screen h-full"
-      >
-        <Link href="/" className="font-semibold cursor-pointer">
-            <img src="/logo sin fondo.PNG" alt="Descripción de la imagen" className="block m-[-160px] max-w-[400px] h-[auto] mt-[-55px]"></img>
-        </Link>
-        <div className="text-center">
-          <h2 className="text-[#FACE8D] font-dancing text-[50px] md:text-[80px] leading-none">
-            Te presentamos
-          </h2>
-          <h1 className="font-medium text-[50px] md:text-[80px] leading-none">
-            Nuestros productos
-          </h1>
+      <div className="relative w-full lg:w-[50%] p-12 flex flex-col justify-between items-center min-h-[80vh] md:min-h-screen h-full">
+        <div
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat z-0"
+          style={{
+            backgroundImage: `url(/menu.jpeg)`,
+            opacity: 0.5,
+          }}
+        />
+        <div className="relative z-10 flex flex-col items-center">
+          <Link href="/" className="font-semibold cursor-pointer">
+            <img
+              src="/logo sin fondo.PNG"
+              alt="Descripción de la imagen"
+              className="block h-auto max-w-[340px] sm:max-w-[400px] mt-[-40px] ml-[3px]"
+            />
+          </Link>
+          <div className="text-center mt-4">
+            <h2 className="text-[#FACE8D] font-dancing text-[50px] md:text-[80px] leading-none">
+              Te presentamos
+            </h2>
+            <h1 className="font-medium text-[50px] md:text-[80px] leading-none">
+              Nuestros productos
+            </h1>
+          </div>
         </div>
-
-        <NavigationFooter />
+        <div className="w-full flex-col justify-center max-w-[650px] mb-[00px] sm:mb-[00px] md:mb-[0px] lg:mb-[0px]">
+            <NavigationFooter />
+          </div>
       </div>
 
       <div className="w-full lg:w-[50%] flex flex-col items-center h-screen">
