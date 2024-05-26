@@ -195,7 +195,7 @@ export default function Classes() {
               <h3 className="text-[35px]">Parque Fabricato</h3>
               <h3 className="text-[35px]">FIC 48</h3>
               <h3 className="text-[35px]">Aventura</h3>
-              <p className="text-[25px] text-white text-opacity-50">NOS</p>
+              
             </div>
           </SwiperSlide>
           <SwiperSlide className="relative">
@@ -215,7 +215,7 @@ export default function Classes() {
               <h3 className="text-[35px]">Edificio Meridiano</h3>
               <h3 className="text-[35px]">Torre 90</h3>
               <h3 className="text-[35px]">Titán Plaza</h3>
-              <p className="text-[25px] text-white text-opacity-50">ENCANTA</p>
+              
             </div>
           </SwiperSlide>
           <SwiperSlide className="relative">
@@ -230,7 +230,7 @@ export default function Classes() {
             <div className="fixed inset-0 flex flex-col items-center justify-center text-center h-full min-h-screen z-10">
               <h1 className="text-[#FACE8D] font-dancing text-[58px] mt-[-100px] mb-4">Bucaramanga</h1>
               <h3 className="text-[35px]">Bucaramanga</h3>
-              <p className="text-[25px] text-white text-opacity-50">SERVIRTE</p>
+            
             </div>
           </SwiperSlide>
         </Swiper>
@@ -240,7 +240,7 @@ export default function Classes() {
             <button className="navigation-button next" onClick={handleNext}>→</button>
           </>
         )}
-        <div className="absolute top-0 left-0 w-full flex justify-center p-8 z-20">
+        <div className="absolute top-0 left-0 w-full flex justify-center z-20">
           <Link href="/" className="font-semibold cursor-pointer">
             <img
               src="/logo sin fondo.PNG"
@@ -250,8 +250,8 @@ export default function Classes() {
             />
           </Link>
         </div>
-        <div className="absolute bottom-0 left-0 w-full flex justify-center p-8 z-20">
-          <div style={{ width: imageWidth }} className="max-w-[650px] mb-10">
+        <div className="absolute bottom-0 left-0 w-full flex justify-center z-20">
+          <div style={{ width: imageWidth }} className="max-w-[650px] mb-[70px]">
             <NavigationFooter />
           </div>
         </div>
