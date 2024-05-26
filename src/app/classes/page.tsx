@@ -167,12 +167,6 @@ export default function Classes() {
         }
         
 
-        @media (max-width: 540px) {
-          .sticky-container .logo-img {
-            margin-top: 45px;
-          }
-        }
-
       `}</style>
 
       <main className="min-h-screen relative overflow-hidden">
@@ -247,7 +241,7 @@ export default function Classes() {
             <button className="navigation-button next" onClick={handleNext}>→</button>
           </>
         )}
-        <div className="w-full min-h-screen flex flex-col justify-between items-center fixed bottom-[30px] left-[1%] py-10 z-10">
+        <div className="relative inset-0 min-h-screen w-full bg-transparent flex flex-col items-center p-8 md:p-12 z-[20]">
           <Link href="/" className="font-semibold cursor-pointer flex justify-center items-center">
             <img
               src="/logo sin fondo.PNG"
@@ -256,7 +250,7 @@ export default function Classes() {
               className="block h-auto max-w-[340px] sm:max-w-[400px] sm:mb-[45px] ml-[-15px]"
             />
           </Link>
-          <div style={{ width: imageWidth }} className="flex justify-center">
+          <div style={{ width: imageWidth }} className="w-full flex-col justify-center max-w-[650px] mb-[50px] sm:mb-[55px] md:mb-[50px] lg:mb-[10px]">
             <NavigationFooter />
           </div>
         </div>
