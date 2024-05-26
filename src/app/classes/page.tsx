@@ -2,25 +2,175 @@
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
-import "swiper/css/pagination";
-import React from "react";
-import { Pagination } from "swiper/modules";
+import React, { useEffect, useRef, useState } from "react";
 import NavigationFooter from "@/components/NavigationFooter";
 import Link from "next/link";
 import Head from "next/head";
 import useWindow from "@/hooks/useWindow";
+import SwiperCore, { Navigation, Autoplay } from 'swiper';
+SwiperCore.use([Autoplay, Navigation]);
 
 export default function Classes() {
   const { width } = useWindow();
+  const [imageWidth, setImageWidth] = useState(0);
+  const imageRef = useRef<HTMLImageElement>(null);
+  const swiperRef = useRef<SwiperCore | null>(null);
+
+  useEffect(() => {
+    if (imageRef.current) {
+      setImageWidth(imageRef.current.offsetWidth);
+    }
+  }, [width]);
 
   const mobileRow = width <= 540 ? 1 : 2;
   const row = width > 768 ? 3 : mobileRow;
+
+  const handleNext = () => {
+    if (swiperRef.current) {
+      swiperRef.current.slideNext();
+    }
+  };
+
+  const handlePrev = () => {
+    if (swiperRef.current) {
+      swiperRef.current.slidePrev();
+    }
+  };
 
   return (
     <>
       <Head>
         <title>Gourmet & Parrilla</title>
       </Head>
+
+      <style jsx>{`
+      
+        .mySwiper {
+          height: 100vh;
+        }
+        .h-screen {
+          height: 100vh;
+        }
+        .min-h-screen {
+          min-height: 100vh;
+        }
+        .opacity-50 {
+          opacity: 0.5;
+        }
+        .fixed {
+          position: fixed;
+        }
+        .inset-0 {
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+        }
+        .flex {
+          display: flex;
+        }
+        .flex-col {
+          flex-direction: column;
+        }
+        .items-center {
+          align-items: center;
+        }
+        .justify-center {
+          justify-content: center;
+        }
+        .text-center {
+          text-align: center;
+        }
+        .text-[#FACE8D] {
+          color: #FACE8D;
+        }
+        .font-dancing {
+          font-family: 'Dancing Script', cursive;
+        }
+        .text-[58px] {
+          font-size: 58px;
+        }
+        .text-[35px] {
+          font-size: 35px;
+        }
+        .text-[25px] {
+          font-size: 25px;
+        }
+        .text-white {
+          color: white;
+        }
+        .text-opacity-50 {
+          opacity: 0.5;
+        }
+        .mb-4 {
+          margin-bottom: 1rem;
+        }
+        .mt-20 {
+          margin-top: 5rem;
+        }
+        .mt-[-100px] {
+          margin-top: -100px;
+        }
+        .w-full {
+          width: 100%;
+        }
+        .py-10 {
+          padding-top: 2.5rem;
+          padding-bottom: 2.5rem;
+        }
+        .z-10 {
+          z-index: 10;
+        }
+        .block {
+          display: block;
+        }
+        .h-auto {
+          height: auto;
+        }
+        .max-w-[340px] {
+          max-width: 340px;
+        }
+        .sm:max-w-[400px] {
+          max-width: 400px;
+        }
+        .mt-[0px] {
+          margin-top: 0;
+        }
+        .ml-[-15px] {
+          margin-left: -15px;
+        }
+        .navigation-button {
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          background: rgba(0, 0, 0, 0.5);
+          color: white;
+          border: none;
+          padding: 10px;
+          cursor: pointer;
+          z-index: 1000;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border-radius: 50%;
+          font-size: 24px;
+          width: 40px; // Ajusta el tamaño del botón
+          height: 40px; // Ajusta el tamaño del botón
+        }
+        .navigation-button.next {
+          right: 10px;
+        }
+        .navigation-button.prev {
+          left: 10px;
+        }
+
+        @media (max-width: 540px) {
+          .text-[35px] {
+            font-size: 35px;
+          }
+        }
+
+      `}</style>
 
       <main className="min-h-screen relative overflow-hidden">
         <Swiper
@@ -30,11 +180,10 @@ export default function Classes() {
           }}
           slidesPerView={row}
           spaceBetween={0}
-          pagination={{
-            clickable: true,
+          className="mySwiper"
+          onSwiper={(swiper) => {
+            swiperRef.current = swiper;
           }}
-          modules={[Pagination]}
-          className="mySwiper h-screen"
         >
           <SwiperSlide className="relative">
             <div
@@ -50,9 +199,7 @@ export default function Classes() {
               <h3 className="text-[35px]">Parque Fabricato</h3>
               <h3 className="text-[35px]">FIC 48</h3>
               <h3 className="text-[35px]">Aventura</h3>
-              <p className="text-[25px] text-white text-opacity-50">
-                NOS
-              </p>
+              <p className="text-[25px] text-white text-opacity-50">NOS</p>
             </div>
           </SwiperSlide>
           <SwiperSlide className="relative">
@@ -72,9 +219,7 @@ export default function Classes() {
               <h3 className="text-[35px]">Edificio Meridiano</h3>
               <h3 className="text-[35px]">Torre 90</h3>
               <h3 className="text-[35px]">Titán Plaza</h3>
-              <p className="text-[25px] text-white text-opacity-50">
-                ENCANTA
-              </p>
+              <p className="text-[25px] text-white text-opacity-50">ENCANTA</p>
             </div>
           </SwiperSlide>
           <SwiperSlide className="relative">
@@ -89,17 +234,28 @@ export default function Classes() {
             <div className="fixed inset-0 flex flex-col items-center justify-center text-center h-full min-h-screen">
               <h1 className="text-[#FACE8D] font-dancing text-[58px] mt-[-100px] mb-4">Bucaramanga</h1>
               <h3 className="text-[35px]">Bucaramanga</h3>
-              <p className="text-[25px] text-white text-opacity-50">
-                SERVIRTE
-              </p>
+              <p className="text-[25px] text-white text-opacity-50">SERVIRTE</p>
             </div>
           </SwiperSlide>
         </Swiper>
+        {row < 3 && (
+          <>
+            <button className="navigation-button prev" onClick={handlePrev}>←</button>
+            <button className="navigation-button next" onClick={handleNext}>→</button>
+          </>
+        )}
         <div className="w-full min-h-screen flex flex-col justify-between items-center fixed bottom-[30px] left-[1%] py-10 z-10">
           <Link href="/" className="font-semibold cursor-pointer flex justify-center items-center">
-            <img src="/logo sin fondo.PNG" alt="Descripción de la imagen" className="block max-w-[400px] ml-[-8px] h-auto mx-auto mt-[-20px]" />
+            <img
+              src="/logo sin fondo.PNG"
+              alt="Descripción de la imagen"
+              ref={imageRef}
+              className="block h-auto max-w-[340px] sm:max-w-[400px] mt-[0px] ml-[-15px]"
+            />
           </Link>
-          <NavigationFooter />
+          <div style={{ width: imageWidth }} className="flex justify-center">
+            <NavigationFooter />
+          </div>
         </div>
       </main>
     </>
