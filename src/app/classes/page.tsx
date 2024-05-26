@@ -253,7 +253,7 @@ export default function Classes() {
               src="/logo sin fondo.PNG"
               alt="Descripción de la imagen"
               ref={imageRef}
-              className="block h-auto max-w-[340px] sm:max-w-[400px] mt-[0px] ml-[-15px]"
+              className="block h-auto max-w-[340px] sm:max-w-[400px] sm:mb-[45px] ml-[-15px]"
             />
           </Link>
           <div style={{ width: imageWidth }} className="flex justify-center">
