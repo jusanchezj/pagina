@@ -1,5 +1,4 @@
 "use client";
-
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import React, { useEffect, useRef, useState } from "react";
@@ -7,9 +6,8 @@ import NavigationFooter from "@/components/NavigationFooter";
 import Link from "next/link";
 import Head from "next/head";
 import useWindow from "@/hooks/useWindow";
-import Navigation from 'swiper';
 import { Autoplay } from "swiper/modules";
-import SwiperCore from  'swiper';
+import SwiperCore from 'swiper';
 SwiperCore.use([Autoplay]);
 
 export default function Classes() {
@@ -44,9 +42,7 @@ export default function Classes() {
       <Head>
         <title>Gourmet & Parrilla</title>
       </Head>
-
       <style jsx>{`
-      
         .mySwiper {
           height: 100vh;
         }
@@ -123,6 +119,12 @@ export default function Classes() {
         .z-10 {
           z-index: 10;
         }
+        .z-20 {
+          z-index: 20;
+        }
+        .z-30 {
+          z-index: 30;
+        }
         .block {
           display: block;
         }
@@ -150,7 +152,6 @@ export default function Classes() {
           border: none;
           padding: 10px;
           cursor: pointer;
-          z-index: 1000;
           display: flex;
           align-items: center;
           justify-content: center;
@@ -158,6 +159,7 @@ export default function Classes() {
           font-size: 24px;
           width: 40px; // Ajusta el tamaño del botón
           height: 40px; // Ajusta el tamaño del botón
+          z-index: 30;
         }
         .navigation-button.next {
           right: 10px;
@@ -165,15 +167,12 @@ export default function Classes() {
         .navigation-button.prev {
           left: 10px;
         }
-        
-
       `}</style>
-
       <main className="min-h-screen relative overflow-hidden">
         <Swiper
           loop
           autoplay={{
-            delay: 100000,
+            delay: 10000,
           }}
           slidesPerView={row}
           spaceBetween={0}
@@ -191,7 +190,7 @@ export default function Classes() {
                 backgroundSize: "cover",
               }}
             />
-            <div className="fixed inset-0 flex flex-col items-center justify-center text-center h-full min-h-screen">
+            <div className="fixed inset-0 flex flex-col items-center justify-center text-center h-full min-h-screen z-10">
               <h1 className="text-[#FACE8D] font-dancing text-[58px] mb-4">Medellín</h1>
               <h3 className="text-[35px]">Parque Fabricato</h3>
               <h3 className="text-[35px]">FIC 48</h3>
@@ -208,7 +207,7 @@ export default function Classes() {
                 backgroundSize: "cover",
               }}
             />
-            <div className="fixed inset-0 flex flex-col items-center justify-center text-center h-full min-h-screen">
+            <div className="fixed inset-0 flex flex-col items-center justify-center text-center h-full min-h-screen z-10">
               <h1 className="text-[#FACE8D] font-dancing text-[58px] mt-20 mb-4">Bogotá</h1>
               <h3 className="text-[35px]">Mall Plaza</h3>
               <h3 className="text-[35px]">Canapro</h3>
@@ -228,7 +227,7 @@ export default function Classes() {
                 backgroundSize: "cover",
               }}
             />
-            <div className="fixed inset-0 flex flex-col items-center justify-center text-center h-full min-h-screen">
+            <div className="fixed inset-0 flex flex-col items-center justify-center text-center h-full min-h-screen z-10">
               <h1 className="text-[#FACE8D] font-dancing text-[58px] mt-[-100px] mb-4">Bucaramanga</h1>
               <h3 className="text-[35px]">Bucaramanga</h3>
               <p className="text-[25px] text-white text-opacity-50">SERVIRTE</p>
@@ -241,7 +240,7 @@ export default function Classes() {
             <button className="navigation-button next" onClick={handleNext}>→</button>
           </>
         )}
-        <div className="absolute top-0 left-0 w-full flex justify-center p-8">
+        <div className="absolute top-0 left-0 w-full flex justify-center p-8 z-20">
           <Link href="/" className="font-semibold cursor-pointer">
             <img
               src="/logo sin fondo.PNG"
@@ -251,7 +250,7 @@ export default function Classes() {
             />
           </Link>
         </div>
-        <div className="absolute bottom-0 left-0 w-full flex justify-center p-8">
+        <div className="absolute bottom-0 left-0 w-full flex justify-center p-8 z-20">
           <div style={{ width: imageWidth }} className="max-w-[650px] mb-10">
             <NavigationFooter />
           </div>
