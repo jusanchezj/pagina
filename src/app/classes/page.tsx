@@ -7,8 +7,10 @@ import NavigationFooter from "@/components/NavigationFooter";
 import Link from "next/link";
 import Head from "next/head";
 import useWindow from "@/hooks/useWindow";
-import SwiperCore, { Navigation, Autoplay } from 'swiper';
-SwiperCore.use([Autoplay, Navigation]);
+import Navigation from 'swiper';
+import { Autoplay } from "swiper/modules";
+import SwiperCore from  'swiper';
+SwiperCore.use([Autoplay]);
 
 export default function Classes() {
   const { width } = useWindow();
