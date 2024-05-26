@@ -208,7 +208,7 @@ export default function Classes() {
               }}
             />
             <div className="fixed inset-0 flex flex-col items-center justify-center text-center h-full min-h-screen z-10">
-              <h1 className="text-[#FACE8D] font-dancing text-[58px] mt-20 mb-4">Bogotá</h1>
+              <h1 className="text-[#FACE8D] font-dancing text-[58px] mt-00 mb-4">Bogotá</h1>
               <h3 className="text-[35px]">Mall Plaza</h3>
               <h3 className="text-[35px]">Canapro</h3>
               <h3 className="text-[35px]">Ecotek</h3>
@@ -251,7 +251,7 @@ export default function Classes() {
           </Link>
         </div>
         <div className="absolute bottom-0 left-0 w-full flex justify-center z-20">
-          <div style={{ width: imageWidth }} className="max-w-[650px] mb-[70px]">
+          <div style={{ width: imageWidth }} className="max-w-[650px] mb-[94px]">
             <NavigationFooter />
           </div>
         </div>
