@@ -166,6 +166,13 @@ export default function Classes() {
           left: 10px;
         }
 
+        .sticky-container {
+          position: sticky;
+          top: 0;
+          background-color: rgba(255, 255, 255, 0.9); /* Color de fondo opcional */
+          z-index: 1000;
+        }
+
         @media (max-width: 540px) {
           .text-[35px] {
             font-size: 35px;
