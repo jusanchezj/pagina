@@ -241,16 +241,18 @@ export default function Classes() {
             <button className="navigation-button next" onClick={handleNext}>→</button>
           </>
         )}
-        <div className="relative inset-0 min-h-screen w-full bg-transparent flex flex-col items-center p-8 md:p-12 z-[20]">
-          <Link href="/" className="font-semibold cursor-pointer flex justify-center items-center">
+        <div className="absolute top-0 left-0 w-full flex justify-center p-8">
+          <Link href="/" className="font-semibold cursor-pointer">
             <img
               src="/logo sin fondo.PNG"
               alt="Descripción de la imagen"
               ref={imageRef}
-              className="block h-auto max-w-[340px] sm:max-w-[400px] sm:mb-[45px] ml-[-15px]"
+              className="block h-auto max-w-[340px] sm:max-w-[400px] ml-[-15px]"
             />
           </Link>
-          <div style={{ width: imageWidth }} className="w-full flex-col justify-center max-w-[650px] mb-[50px] sm:mb-[55px] md:mb-[50px] lg:mb-[10px]">
+        </div>
+        <div className="absolute bottom-0 left-0 w-full flex justify-center p-8">
+          <div style={{ width: imageWidth }} className="max-w-[650px] mb-10">
             <NavigationFooter />
           </div>
         </div>
