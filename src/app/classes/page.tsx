@@ -16,6 +16,9 @@ export default function Classes() {
   const imageRef = useRef<HTMLImageElement>(null);
   const swiperRef = useRef<SwiperCore | null>(null);
 
+  // Estado para controlar la visibilidad del NavigationFooter
+  const [isNavigationFooterVisible, setIsNavigationFooterVisible] = useState(false);
+
   useEffect(() => {
     if (imageRef.current) {
       setImageWidth(imageRef.current.offsetWidth);
@@ -35,6 +38,11 @@ export default function Classes() {
     if (swiperRef.current) {
       swiperRef.current.slidePrev();
     }
+  };
+
+  // Maneja el clic en el botón de NavigationFooter
+  const toggleNavigationFooter = () => {
+    setIsNavigationFooterVisible(prevState => !prevState);
   };
 
   return (
@@ -195,7 +203,6 @@ export default function Classes() {
               <h3 className="text-[35px]">Parque Fabricato</h3>
               <h3 className="text-[35px]">FIC 48</h3>
               <h3 className="text-[35px]">Aventura</h3>
-              
             </div>
           </SwiperSlide>
           <SwiperSlide className="relative">
@@ -212,10 +219,7 @@ export default function Classes() {
               <h3 className="text-[35px]">Mall Plaza</h3>
               <h3 className="text-[35px]">Canapro</h3>
               <h3 className="text-[35px]">Ecotek</h3>
-              <h3 className="text-[35px]">Edificio Meridiano</h3>
-              <h3 className="text-[35px]">Torre 90</h3>
-              <h3 className="text-[35px]">Titán Plaza</h3>
-              
+    
             </div>
           </SwiperSlide>
           <SwiperSlide className="relative">
@@ -229,8 +233,7 @@ export default function Classes() {
             />
             <div className="fixed inset-0 flex flex-col items-center justify-center text-center h-full min-h-screen z-10">
               <h1 className="text-[#FACE8D] font-dancing text-[58px] mt-[-100px] mb-4">Bucaramanga</h1>
-              <h3 className="text-[35px]">Bucaramanga</h3>
-            
+              <h3 className="text-[35px]">Ciudad Bonita</h3>
             </div>
           </SwiperSlide>
         </Swiper>
@@ -252,7 +255,8 @@ export default function Classes() {
         </div>
         <div className="absolute bottom-0 left-0 w-full flex justify-center z-20">
           <div style={{ width: imageWidth }} className="max-w-[650px] mb-[94px]">
-            <NavigationFooter />
+            <NavigationFooter/>
+
           </div>
         </div>
       </main>
