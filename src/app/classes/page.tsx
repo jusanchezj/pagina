@@ -226,7 +226,7 @@ export default function Classes() {
             <div
               className="h-screen opacity-50"
               style={{
-                backgroundImage: `url(/bucaramanga.jpg)`,
+                backgroundImage: `url(/bucaramanga.jpeg)`,
                 backgroundRepeat: "no-repeat",
                 backgroundSize: "cover",
               }}
